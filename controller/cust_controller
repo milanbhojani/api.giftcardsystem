@@ -1,0 +1,10 @@
+const Customer = require("../models/Customer");
+
+exports.addCustomer = async (req, res) => {
+    const locals = {
+      title: "Add New Customer - NodeJs",
+      description: "Free NodeJs User Management System",
+    };
+  
+    res.render("/", locals);
+  };
