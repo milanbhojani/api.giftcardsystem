@@ -29,7 +29,7 @@ const upload = multer({storage : storage}).single('avatar');
 router.post('/signup',upload,userController.postUser);
 router.post('/signin',userController.postUserlogin)
 router.get('/getdata',Authenticate,userController.getdata)
-router.post('/addgiftcard',Authenticate,userController.postgiftcard)
+router.post('/addgiftcard',userController.postgiftcard)
 
 
 module.exports = router;

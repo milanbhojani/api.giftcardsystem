@@ -27,8 +27,8 @@ const GiftcardDetails = new Schema({
     required: false,
   },
   createdBy: {
-    type: String,
-    required: false,
+    type: mongoose.Schema.Types.ObjectId,
+    _def: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
   }
 },{timestamps: true});
 
