@@ -112,7 +112,7 @@ exports.postgiftcard = async (req, res) => {
 
   let token = JSON.parse(atob(req.body.token.split('.')[1]))
   console.log("Gift card Data :",token);
-  
+
   const newGiftcard = new Giftcard({
     companyName: req.body.companyName,
     category: req.body.category,
@@ -136,4 +136,22 @@ exports.postgiftcard = async (req, res) => {
   } catch (error) {
     return res.json({ msg: error });
   }
+};
+
+
+/**
+ * GET /
+ * Fetch gift card details
+ */
+exports.getgiftcard = async (req, res) => {
+
+  try {
+    const giftcards = await Giftcard.find()  
+    console.log(giftcards)
+    res.send(giftcards)
+
+  } catch (error) {
+    console.log(error);
+  }
+
 };

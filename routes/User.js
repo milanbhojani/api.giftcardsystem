@@ -30,6 +30,7 @@ router.post('/signup',upload,userController.postUser);
 router.post('/signin',userController.postUserlogin)
 router.get('/getdata',Authenticate,userController.getdata)
 router.post('/addgiftcard',userController.postgiftcard)
+router.get('/getgiftcard',userController.getgiftcard)
 
 
 module.exports = router;
